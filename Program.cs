@@ -10,7 +10,10 @@ namespace RSSTweeter
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            RSSFetch.readFeed();
+            string feedURI = "https://www.pftq.com/forums/?type=rss;action=.xml;boards=72;limit=5";
+            RSSFeed newFeed = RSSFetch.readFeed(feedURI);
+            Console.WriteLine(newFeed);
+            
         }
 
     }
