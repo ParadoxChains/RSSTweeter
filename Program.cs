@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
-using CodeHollow.FeedReader;
-
 
 namespace RSSTweeter
 {
