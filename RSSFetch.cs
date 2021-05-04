@@ -12,25 +12,16 @@ namespace RSSTweeter
 {
     class RSSFetch
     {
-        public static async Task<int> readFeed()
+        public static void readFeed()
         {
-            /*Rss20FeedFormatter feedFormatter = new Rss20FeedFormatter();
-            XmlReader rssReader = XmlReader.Create("https://www.pftq.com/forums/?type=rss;action=.xml;boards=72;limit=5");
-            (feedFormatter.CanRead(rssReader))
-            {
-                feedFormatter.ReadFrom(rssReader);
-                rssReader.Close();
-                Console.Write(feedFormatter);
-            }*/
-            var feed = await FeedReader.ReadAsync("https://www.pftq.com/forums/?type=rss;action=.xml;boards=72;limit=1");
+            var feed = FeedReader.Read("https://www.pftq.com/forums/?type=rss;action=.xml;boards=72;limit=5");
             Console.WriteLine("Feed Title: " + feed.Title);
             Console.WriteLine("Feed Description: " + feed.Description);
             Console.WriteLine("Feed Image: " + feed.ImageUrl);
             foreach (var item in feed.Items)
             {
-                Console.WriteLine(item.Title + " - " + item.Link);
+                Console.WriteLine(item.Title + " - " + item.Description);
             }
-            return 1;
         }
     }
 }
