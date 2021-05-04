@@ -34,5 +34,16 @@ namespace RSSTweeter
                 throw new ArgumentNullException(nameof(newItem));
             }
         }
+
+        public override string ToString()
+        {
+            string printout = "";
+            printout += "Feed Title: " + title + "\nFeed Link: " + link + "\nFeed Description: " + description;
+            foreach (var item in items)
+            {
+                printout += item.ToString();
+            }
+            return printout;
+        }
     }
 }
