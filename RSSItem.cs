@@ -10,7 +10,7 @@ namespace RSSTweeter
         private string author;
         private string category;
         private string comments;
-        private string pubDate;
+        private DateTime pubDate;
         private string guid;
 
         public RSSItem(string title, string link, string description, string author, string category, string comments, string pubDate, string guid)
@@ -21,7 +21,7 @@ namespace RSSTweeter
             this.author = author ?? throw new ArgumentNullException(nameof(author));
             this.category = category ?? throw new ArgumentNullException(nameof(category));
             this.comments = comments ?? throw new ArgumentNullException(nameof(comments));
-            this.pubDate = pubDate ?? throw new ArgumentNullException(nameof(pubDate));
+            this.pubDate = DateTime.Parse(pubDate ?? throw new ArgumentNullException(nameof(pubDate))) ;
             this.guid = guid ?? throw new ArgumentNullException(nameof(guid));
         }
 
@@ -31,7 +31,7 @@ namespace RSSTweeter
 
             RSSItem otherItem = obj as RSSItem;
             if (otherItem != null)
-                return this.guid.CompareTo(otherItem.guid);
+                return this.pubDate.CompareTo(otherItem.pubDate);
             else
                 throw new ArgumentException("Object is not a RSSItem");
         }
