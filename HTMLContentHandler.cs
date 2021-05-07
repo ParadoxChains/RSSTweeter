@@ -19,5 +19,23 @@ namespace RSSTweeter
             string text = HttpUtility.HtmlDecode(doc.DocumentNode.InnerText);
             return Regex.Replace(text, @"\s+", " ").Trim();
         }
+        public static List<string> GetImageURIs(string html)
+        {
+            html = html.Replace(">", "> ");
+            var doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(html);
+            List<HtmlNode> imageNodes = null;
+            imageNodes = (from HtmlNode node in doc.DocumentNode.SelectNodes("//img")
+                          where node.Name == "img"
+                          //&& node.Attributes["class"] != null
+                          //&& node.Attributes["class"].Value.StartsWith("img_")
+                          select node).ToList();
+            List<string> uriList = new List<string>();
+            foreach (HtmlNode node in imageNodes)
+            {
+                uriList.Add(node.Attributes["src"].Value);
+            }
+            return uriList;
+        }
     }
 }
