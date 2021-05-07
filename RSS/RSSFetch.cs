@@ -3,7 +3,7 @@ using CodeHollow.FeedReader;
 
 namespace RSSTweeter
 {
-    class RSSFetch
+    public class RSSFetch
     {
         public static RSSFeed readFeed(string feedURI)
         {
