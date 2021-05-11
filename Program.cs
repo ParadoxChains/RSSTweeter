@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace RSSTweeter
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             string feedURI = "https://www.pftq.com/forums/?type=rss;action=.xml;boards=72;limit=10";
