@@ -26,10 +26,6 @@ namespace RSSTweeter
              * $TWITTER_ACCESS_TOKEN_SECRET$
              * -----------------------------------------------------------
              */
-            foreach (string x in loadedFile)
-            {
-                Console.WriteLine(x);
-            }
         }
 
         public string getAPIKey()
