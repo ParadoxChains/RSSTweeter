@@ -7,6 +7,7 @@ namespace RSSTweeter
     {
         static async Task Main(string[] args)
         {
+            /*
             Console.WriteLine("Hello World!");
             string feedURI = "https://www.pftq.com/forums/?type=rss;action=.xml;boards=72;limit=10";
             RSSFeed newFeed = RSSFetch.readFeed(feedURI);
@@ -20,6 +21,8 @@ namespace RSSTweeter
                     Console.WriteLine("  " + uri);
                 }
             }
+            */
+            var userClient = new RSSTweeter.Twitter.BaseTweet();
         }
 
     }
