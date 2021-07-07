@@ -4,10 +4,10 @@ namespace RSSTweeter
 {
     public class RSSItem : IComparable
     {
-        private string title;
-        private string link;
-        private string description;
-        private DateTime pubDate;
+        public string title;
+        public string link;
+        public string description;
+        public DateTime pubDate;
 
         public RSSItem(string title, string link, string description, string pubDate)
         {

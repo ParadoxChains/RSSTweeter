@@ -5,10 +5,10 @@ namespace RSSTweeter
 {
     public class RSSFeed
     {
-        private string title;
-        private string link;
-        private string description;
-        private List<RSSItem> items;
+        public string title;
+        public string link;
+        public string description;
+        public List<RSSItem> items;
 
         public RSSFeed(string title)
         {
